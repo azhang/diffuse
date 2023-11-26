@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotating Sphere with p5.js</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
-        body { background: linear-gradient(90deg, rgba(26,0,46,1) 0%, rgba(133,0,172,1) 100%); margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        canvas { border: 1px solid black; width: 500px; height: 500px; margin: 30px;}
+        body {
+            background-color: #1b1b1b;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        canvas {
+            background: linear-gradient(90deg, rgba(26, 0, 46, 1) 0%, rgb(121, 0, 85) 100%);
+            border: 1px solid rgb(28, 28, 28);
+            -moz-border-radius: 10px 10px 10px 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.545);
+            -moz-box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.545);
+            box-shadow: 0px 12px 59px 0px rgba(0, 0, 0, 0.545);
+            width: 500px;
+            height: 500px;
+            margin: auto;
+        }
     </style>
 </head>
+
 <body>
     <script>
         let angle = 0;
 
         function setup() {
-            createCanvas(windowWidth, windowHeight, WEBGL);
+            createCanvas(600, 600, WEBGL);
             smooth();
             frameRate(60);
             pixelDensity(2);
@@ -27,8 +49,9 @@
             rotateY(angle);
             sphere(100);
             angle += 0.005;
-            fill(150,0,100);
+            fill(200, 0, 100);
         }
     </script>
 </body>
+
 </html>
