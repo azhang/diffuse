@@ -1,4 +1,3 @@
-
 let particles = [];
 
 function setup() {
