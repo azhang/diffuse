@@ -79,11 +79,13 @@
       .logo {
         width: 60%;
       }
-
+    
+    /* Test removal
       #sketch-container {
         height: 50%;
         width: 50%;
       }
+    */
     }
 
     canvas {
