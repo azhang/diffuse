@@ -74,7 +74,7 @@ function connectParticles() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth - 10, windowHeight - 10);
 }
 
 class Particle {
