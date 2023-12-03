@@ -22,7 +22,7 @@ function draw() {
     particle.display();
   }
   connectParticles();
-
+/* framerate display
   push(); // Save the current drawing state
   resetMatrix(); // Reset transformations
   fill(255); // Set fill to white for visibility
@@ -30,6 +30,7 @@ function draw() {
   textAlign(CENTER, TOP); // Align text to be centered horizontally and at the top vertically
   text("FPS: " + frameRate().toFixed(2), width / 2, 10); // Display the frame rate at the top middle
   pop(); // Restore the original drawing state
+  */
 }
 
 function connectParticles() {
