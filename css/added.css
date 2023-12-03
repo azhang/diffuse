@@ -1,15 +1,14 @@
- body {
-      /* background: linear-gradient(to right, #070424, #211e44, #2d295b, #5e57a4, #2d295b, #211e44, #10101c); */
+html {
+      background: #000;
+      z-index: 0;
+}
+body {
       background: rgb(8, 15, 45);
       background: linear-gradient(0deg, rgba(8, 15, 45, 1) 17%, rgba(3, 8, 20, 1) 53%);
-
-
       margin: 0;
       padding: 0;
       height: 100vh;
-      color: white;
-      /*background: #000;*/
-      /* background-color: #b40027', '#a3147d', '#ffea63', 'rgb(255, 183, 0)', '#2d13a3'; */
+      color: white; 
     }
 
     .cover-container {
@@ -55,7 +54,7 @@
       height: 100vh;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: 1;
     }
 
 
