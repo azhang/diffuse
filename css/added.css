@@ -90,3 +90,21 @@ body {
     canvas {
       background: none;
     }
+
+/* z-index */
+	html {
+    z-index: 0; /* Lowest in the stacking order */
+}
+
+body {
+    /* Other styles */
+    z-index: 1; /* Higher than html */
+}
+
+#sketch-container {
+    z-index: 0; /* Same as html, behind body */
+}
+
+.cover-container, .navbar, header, footer, main {
+    z-index: 2; /* or higher, as needed */
+}
