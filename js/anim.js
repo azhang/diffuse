@@ -7,7 +7,7 @@ function setup() {
   for (let i = 0; i < 900; i++) {
     particles.push(new Particle());
   }
-  
+
   textAlign(CENTER, TOP); // Align text to be centered horizontally and vertically aligned to the top
   textSize(20);
 }
@@ -22,15 +22,17 @@ function draw() {
     particle.display();
   }
   connectParticles();
-/* framerate display
-  push(); // Save the current drawing state
-  resetMatrix(); // Reset transformations
-  fill(255); // Set fill to white for visibility
-  noStroke(); // No outline
-  textAlign(CENTER, TOP); // Align text to be centered horizontally and at the top vertically
-  text("FPS: " + frameRate().toFixed(2), width / 2, 10); // Display the frame rate at the top middle
-  pop(); // Restore the original drawing state
-  */
+
+  // Display the frame rate at the top middle
+  /*
+    push(); // Save the current drawing state
+    resetMatrix(); // Reset transformations
+    fill(255); // Set fill to white for visibility
+    noStroke(); // No outline
+    textAlign(CENTER, TOP); // Align text to be centered horizontally and at the top vertically
+    text("FPS: " + frameRate().toFixed(2), width / 2, 10); // Display the frame rate at the top middle
+    pop(); // Restore the original drawing state
+    */
 }
 
 function connectParticles() {
@@ -85,12 +87,6 @@ class Particle {
     this.z = random(width);
     this.speed = random(0.25, 7);
     this.color = this.pickColor();
-    /*
-    this.opacity = 255; // New opacity property for the stuttered blink
-    this.blinkRate = random(30, 60); // This could be how often the blink state changes.
-    this.blinkSpeed = random(0.01, 0.15); // Determines how 'fast' the blink opacity changes.
-    this.blinkDirection = 1; // Controls the direction of the blink: fade in (1) or out (-1).
-*/
   }
 
   pickColor() {
@@ -116,20 +112,7 @@ class Particle {
       this.x = random(-width, width);
       this.y = random(-height, height);
       this.color = this.pickColor(); // Reset color when 'z' is less than 1
-      // this.blinking = random(1) < 0.25; // Decide again if reset particle should blink
     }
-/*
-    // If this particle blinks, change its opacity
-    // Adjust the opacity based on the blink speed and direction.
-    if (this.blinking) {
-      this.opacity += this.blinkSpeed * 255 * this.blinkDirection;
-      // Reverse the direction of blinking if limits are reached.
-      if (this.opacity > 255 || this.opacity < 100) {
-        this.blinkDirection *= -1;
-        this.opacity = constrain(this.opacity, 100, 255); // Keep within bounds.
-      }
-    }
-    */
   }
 
   // Modified display method with a 'glow' effect
@@ -137,10 +120,6 @@ class Particle {
     // Calculate size based on 'z' (depth) value to simulate focus
     let r = map(this.z, 0, width, 7, 0);
 
-    // Enhanced visual effect with glow
-    //  let glowStrength = map(this.z, 0, width, 5, 0);
-    //stroke(red(this.color), green(this.color), blue(this.color), this.opacity / 2); // Glowing edge
-    //strokeWeight(glowStrength / 3);
     fill(red(this.color), green(this.color), blue(this.color), this.opacity);
 
     let sx = map(this.x / this.z, 0, 1, 0, width);
