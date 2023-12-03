@@ -1,5 +1,8 @@
 let particles = [];
 
+/**
+ * Sets up the canvas and initializes particles.
+ */
 function setup() {
   var cnv = createCanvas(windowWidth - 10, windowHeight - 10);
   cnv.parent('sketch-container');
@@ -12,6 +15,9 @@ function setup() {
   textSize(20);
 }
 
+/**
+ * Draws the animation frame.
+ */
 function draw() {
   clear();
 
@@ -35,6 +41,9 @@ function draw() {
     */
 }
 
+/**
+ * Connects particles by drawing lines between them based on their proximity.
+ */
 function connectParticles() {
   let maxDistance = 60; // Set a small distance for close proximity checks
 
@@ -76,10 +85,16 @@ function connectParticles() {
   }
 }
 
+/**
+ * Resizes the canvas when the window is resized.
+ */
 function windowResized() {
   resizeCanvas(windowWidth - 10, windowHeight - 10);
 }
 
+/**
+ * Represents a particle in the animation.
+ */
 class Particle {
   constructor() {
     this.x = random(-width, width);
